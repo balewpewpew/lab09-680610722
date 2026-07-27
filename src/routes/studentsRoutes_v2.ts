@@ -3,12 +3,12 @@ import {
   zStudentPostBody,
   zStudentPutBody,
   zStudentId,
-} from "../libs/zodValidators.ts";
+} from "../libs/zodValidators";
 
 import type { Student, Course } from "../libs/types.ts";
 
 // import database
-import { students, courses } from "../db/db.ts";
+import { students, courses } from "../db/db";
 
 const router = Router();
 
