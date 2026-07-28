@@ -2,14 +2,16 @@ import express, { type Request, type Response } from "express";
 
 // import middlewares
 import morgan from "morgan";
-import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware";
-import notFoundMiddleware from "./middlewares/notFoundMiddleware";
+import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware.ts";
+import notFoundMiddleware from "./middlewares/notFoundMiddleware.ts";
 
 // import routes
-import studentRouter_v2 from "./routes/studentsRoutes_v2";
-import studentRouter_v3 from "./routes/studentsRoutes_v3";
-import courseRouter_v2 from "./routes/coursesRouters_v2";
-import usersRouter from "./routes/usersRoutes";
+import studentRouter_v2 from "./routes/studentsRoutes_v2.ts";
+import studentRouter_v3 from "./routes/studentsRoutes_v3.ts";
+import courseRouter_v2 from "./routes/coursesRouters_v2.ts";
+import usersRouter from "./routes/usersRoutes.ts";
+import enrollmensRouter_v2 from "./routes/enrollmentsRoutes_v2.ts";
+import { success } from "zod";
 
 const app = express();
 const port = 3000;
@@ -26,17 +28,34 @@ app.use(invalidJsonMiddleware);
 
 // Endpoints
 app.get("/", (req: Request, res: Response) => {
-  res.send("Lecture09 API services");
+  res.send("Lab09 API services");
 });
 
 
-app.use("/api/v2/students", studentRouter_v2);
-app.use("/api/v3/students", studentRouter_v3);
-app.use("/api/v2/courses", courseRouter_v2);
-app.use("/api/v2/users",usersRouter);
+// app.use("/api/v2/students", studentRouter_v2);
+// app.use("/api/v3/students", studentRouter_v3);
+// app.use("/api/v2/courses", courseRouter_v2);
+// app.use("/api/v2/users",usersRouter);
+app.use("/api/v2/enrollments",enrollmensRouter_v2);
+
+app.get("/api/me",(req: Request, res: Response)=>{
+  return res.status(200).json({
+    success: true,
+    message: "Student Information",
+    data: {
+      studentId: "680610722",
+      firstname: "Supapit",
+      lastname: "Chaitan",
+      program: "CPE",
+      section: "001"
+    }
+  })
+})
 
 // endpoint check middleware
 app.use(notFoundMiddleware);
+
+
 
 app.listen(port, () => {
   console.log(`🚀 Server running on http://localhost:${port}`);

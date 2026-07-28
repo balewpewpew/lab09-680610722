@@ -3,7 +3,7 @@ import {
   type Course,
   type Enrollment,
   type User,
-} from "../libs/types";
+} from "../libs/types.ts";
 
 // In-memory "database"
 export let students: Student[] = [
