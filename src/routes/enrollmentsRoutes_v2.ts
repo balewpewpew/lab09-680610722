@@ -87,7 +87,7 @@ router.post("/login", (req: CustomRequest, res: Response) => {
     });
   }
   // 3. create JWT token (with user info object as payload) using JWT_SECRET_KEY
-  const jwt_secret = process.env.JWT_SECRET || "this_is_my_super_secret";
+  const jwt_secret = process.env.JWT_SECRET || "hello_its_me";
   const token = jwt.sign(
     {
         //App payload
