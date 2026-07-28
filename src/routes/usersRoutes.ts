@@ -6,10 +6,10 @@ dotenv.config();
 import type { User, UserPayload, CustomRequest } from "../libs/types.ts";
 
 // import database
-import { users, reset_users } from "../db/db";
+import { users, reset_users } from "../db/db.ts";
 import { success } from "zod";
 import { authenticateToken } from "../middlewares/authenMiddleware.js";
-import { checkRoleAdmin } from "../middlewares/checkRoleAdminMiddleware.js";
+import { checkRoleAdmin } from "../middlewares/checkRoleAdminMiddleware.ts";
 import { token } from "morgan";
 
 const router = Router();

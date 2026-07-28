@@ -6,10 +6,10 @@ import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware.ts";
 import notFoundMiddleware from "./middlewares/notFoundMiddleware.ts";
 
 // import routes
-import studentRouter_v2 from "./routes/studentsRoutes_v2.ts";
-import studentRouter_v3 from "./routes/studentsRoutes_v3.ts";
-import courseRouter_v2 from "./routes/coursesRouters_v2.ts";
-import usersRouter from "./routes/usersRoutes.ts";
+// import studentRouter_v2 from "./routes/studentsRoutes_v2.ts";
+// import studentRouter_v3 from "./routes/studentsRoutes_v3.ts";
+// import courseRouter_v2 from "./routes/coursesRouters_v2.ts";
+// import usersRouter from "./routes/usersRoutes.ts";
 import enrollmensRouter_v2 from "./routes/enrollmentsRoutes_v2.ts";
 import { success } from "zod";
 

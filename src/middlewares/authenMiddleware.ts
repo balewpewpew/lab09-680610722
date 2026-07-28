@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
-import { type CustomRequest, type UserPayload } from "../libs/types";
+import { type CustomRequest, type UserPayload } from "../libs/types.ts";
 
 // interface CustomRequest extends Request {
 //   user?: any; // Define the user property
